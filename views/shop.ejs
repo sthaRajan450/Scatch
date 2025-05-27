@@ -43,7 +43,8 @@
                             <div class=" w-70 h-86 bg-[<%=product.bgColor%>]">
                                 <div class="h-70 w-full ">
                                     <img class="w-full h-full object-cover"
-                                        src="data:image/jpeg;base64,<%=product.image.toString('base64')%>" alt="product">
+                                        src="data:image/jpeg;base64,<%=product.image.toString('base64')%>"
+                                        alt="product">
                                 </div>
                                 <div
                                     class="flex  justify-between items-center bg-[<%=product.panelColor%>] text-[<%=product.textColor%>] px-5 py-2">
@@ -55,7 +56,11 @@
                                         </p>
                                     </div>
                                     <div class="bg-white rounded-full w-10 h-10 text-2xl text-center cursor-pointer ">
-                                        <a class="w-full h-full" href="/addtocart/<%=product._id%>">+</a>
+                                        <a href="/addtocart/<%= product._id %>"
+                                            class="bg-white rounded-full w-10 h-10 text-2xl flex items-center justify-center cursor-pointer transition-all duration-200 hover:bg-gray-200 active:scale-95 shadow hover:shadow-md">
+                                            +
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>
