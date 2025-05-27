@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <div class="flex w-full h-screen px-20 gap-5">
+
+            <div class="flex w-1/3  flex-col h-screen overflow-auto">
+
+                <%if(user.cart.length>0){%>
+
+                    <%user.cart.forEach(item=>{%>
+                        <div class=" p-4 ">
+                            <div class="w-full h-98 flex justify-start">
+                                <img class="w-full h-full object-cover "
+                                    src="data:image/jpeg;base64,<%=item.image.toString('base64')%>" alt="product">
+                            </div>
+                            <div class="flex justify-between p-3 bg-[<%=item.panelColor%>] text-[<%=item.textColor%>]">
+                                <h1>
+                                    <%=item.name%>
+                                </h1>
+                                <div class="flex gap-x-3">
+                                    <button
+                                        class="w-8  h-8  text-xl cursor-pointer bg-white rounded-lg flex justify-center items-center">+</button>
+                                    <h1>
+                                        <%=item.quantity%>
+                                    </h1>
+                                    <button
+                                        class="w-8  h-8  text-xl cursor-pointer bg-white rounded-lg flex justify-center items-center">-</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between  p-3 bg-gray-300  font-semibold  ">
+                                <h1>Net Total
+                                </h1>
+                                <h1>Rs.<%=item.price%>
+                                </h1>
+                            </div>
+
+                        </div>
+
+                        <%})%>
+                            <%}else{%>
+                                <h1>Not items added yet</h1>
+                                <%}%>
+
+
+            </div>
+            <div class=" w-2/3 px-10 py-5 flex justify-center flex-col items-center  bg-gray-200  ">
+                <h1 class="font-semibold text-xl"> Price Breakdown</h1>
+
+                <div class="w-[70%]">
+
+                    <div class="flex justify-between my-3 px-3">
+                        <h1>Total MRP</h1>
+                        <p class="w-[20%] ">Rs.<%=totalPrice%>
+                        </p>
+                    </div>
+                    <div class="flex justify-between my-3 px-3">
+                        <h1>Discount on MRP</h1>
+                        <p class="w-[20%] ">Rs. <%=totalDiscount%>
+                        </p>
+                    </div>
+                    <div class="flex justify-between my-3 px-3">
+                        <h1>Platform Fee</h1>
+                        <p class="w-[20%] ">Rs. 20</p>
+                    </div>
+                    <div class="flex justify-between my-3 px-3">
+                        <h1>Shipping Fee</h1>
+                        <p class="w-[20%] ">FREE</p>
+                    </div>
+
+
+
+                </div>
+                <hr>
+                <div class="flex w-[70%]  justify-between my-3 px-3 border-t pt-3">
+
+                    <h1 class="text-xl">Total Amount</h1>
+                    <p class="text-xl text-green-500 font-bold w-[20%]">Rs.Rs. <%= totalPrice - totalDiscount + 20 %>
+                    </p>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

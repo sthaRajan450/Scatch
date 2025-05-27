@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <div class="flex  py-10">
+
+
+        <div class="flex w-1/4 px-10 py-20 flex-col justify-start">
+            <a href="/product">All Products</a>
+            <a href="/owners/admin">Create new product</a>
+        </div>
+
+        <div class="w-1/2">
+            <h1 class="text-3xl font-semibold my-4">Create New Product</h1>
+            <p class="text-xl font-semibold">Product Details</p>
+
+            <form action="/products/create" method="post" enctype="multipart/form-data" class="space-y-4">
+                <div class="border border-gray-300 px-3 py-2 rounded-lg">
+                    <label class="block">Product Image</label>
+                    <input type="file" name="image">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <input class="border border-gray-300 px-3 py-2 rounded-lg" type="text" placeholder="Product Name"
+                        name="name">
+                    <input class="border border-gray-300 px-3 py-2 rounded-lg" type="text" placeholder="Product Price"
+                        name="price">
+                    <input class="border border-gray-300 px-3 py-2 rounded-lg" type="text" placeholder="Discount Price"
+                        name="discount">
+                </div>
+                <h1 class="text-xl font-semibold">Panel Details</h1>
+                <div class="grid grid-cols-2 gap-4">
+                    <input class="border border-gray-300 px-3 py-2 rounded-lg" type="text"
+                        placeholder="Background Color" name="bgColor">
+                    <input class="border border-gray-300 px-3 py-2 rounded-lg" type="text" placeholder="Panel Color"
+                        name="panelColor">
+                    <input class="border border-gray-300 px-3 py-2 rounded-lg" type="text" placeholder="Text Color"
+                        name="textColor">
+                </div>
+
+                <input class="bg-blue-500 text-white p-3 cursor-pointer  rounded-2xl" type="submit"
+                    value="Create New Product">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -8,4 +8,4 @@ const ownereSchema = mongoose.Schema({
   gstin: String,
 });
 
-module.exports = mongoose.model("user", ownereSchema);
+module.exports = mongoose.model("owner", ownereSchema);

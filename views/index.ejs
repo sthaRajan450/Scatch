@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <div class="flex justify-around items-center w-full h-screen">
+            <div class="w-1/2 px-30">
+                <h1 class="text-5xl font-semibold">Welcome to <span class="text-blue-500 ">Scatch</span></h1>
+                <p class="text-2xl font-semibold">create your account </p>
+                <form action="/users/register" method="post">
+                    <div>
+                        <input class="w-full bg-gray-200 p-3 outline-none rounded-lg  my-3" type="text"
+                            placeholder="Full Name" name="fullname">
+                    </div>
+                    <div>
+                        <input class="w-full bg-gray-200 p-3 outline-none rounded-lg  my-3" type="email"
+                            placeholder="email" name="email">
+                    </div>
+                    <div>
+                        <input class="w-full bg-gray-200 p-3 outline-none rounded-lg  my-3" type="password"
+                            placeholder="password" name="password">
+                    </div>
+                    <div>
+                        <input class="bg-blue-500 text-white p-3 rounded-2xl cursor-pointer" type="submit"
+                            value="Create My Account">
+                    </div>
+                </form>
+            </div>
+            <div class="w-1/2 px-30">
+                <h1 class="text-2xl font-semibold">Login your account</h1>
+                <form action="/users/login" method="post">
+                    <div> <input class="w-full bg-gray-200 p-3 outline-none rounded-lg  my-3" type="email"
+                            placeholder="email" name="email"></div>
+                    <div> <input class="w-full bg-gray-200 p-3 outline-none rounded-lg  my-3" type="password"
+                            placeholder="password" name="password"></div>
+                    <div><input class="bg-blue-500 text-white p-3 rounded-2xl cursor-pointer" type="submit"
+                            value="login">
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>
